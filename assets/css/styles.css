@@ -1,0 +1,60 @@
+body {
+    background-image: url("../img/evelyn-e-samuel-img1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, button {
+    font-family: 'Bodoni Moda', serif;
+}
+
+section {
+    height: 100vh;
+}
+
+.bg-tranparent-dark {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-line-white {
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-line-grey {
+    border: 2px solid grey;
+    border-radius: 8px;
+    background-color: transparent;
+    color: grey;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-back-start {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btn-line-white:hover {
+    color: #000;
+    background: #fff;    
+}
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+}
