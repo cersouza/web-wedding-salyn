@@ -13,10 +13,10 @@ h1, h2, h3, h4, h5, h6, p, button {
 
 section {
     height: 100vh;
+    display: block;
 }
 
 .bg-tranparent-dark {
-    width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -29,7 +29,9 @@ section {
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.2s;    
+    margin: 1rem;     
+    min-width: 230px;
 }
 
 .btn-line-grey {
@@ -46,7 +48,7 @@ section {
 .btn-back-start {
     position: fixed;
     bottom: 10px;
-    right: 10px;
+    right: 40px;
 }
 
 .btn-line-white:hover {
@@ -57,4 +59,15 @@ section {
 .title {
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .btn-back-start {
+        display: none;
+    }
+
+    .btn-line-white  {
+        margin: 0;
+        margin-top: 1rem;
+    }
 }
