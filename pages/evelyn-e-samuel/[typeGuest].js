@@ -12,7 +12,7 @@ export default function Home() {
         <div>
             <Head>
                 <link rel="shortcut icon" href="/assets/img/heart-icon.ico" />
-                <title>Meu Casamento - Evelyn & Samuel</title>
+                <title>Evelyn & Samuel - Meu Casamento</title>
             </Head>
             <div className="bg-tranparent-dark" id="inicio">
                 <div className="row">
@@ -27,7 +27,7 @@ export default function Home() {
                                     urlConfirmarPresenca && <a href={urlConfirmarPresenca} target="_blank"><button className="btn-line-white">Confirmar Presença</button></a>
                                 }                             
 
-                                <a href="#informacoes-cerimonia"><button className="btn-line-white">Informações Cerimônia</button></a>                                
+                                <a href="#informacoes-cerimonia"><button className="btn-line-white">Informações da Cerimônia</button></a>                                
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,10 @@ export default function Home() {
                     <div className="row m-0">
                         <div className="col-md-12 p-5 text-center">
                             <h1>Cerimônia</h1>
-                            <p><strong>Local:</strong> Acampamento Recanto do Sal: Rua soldado constitucionalista, Bairro fazenda velha – Nova Odessa.</p>
+                            <p>
+                                <strong>Data:</strong> 10 de julho de 2021, às 16h<br/>
+                                <strong>Local:</strong> Acampamento Recanto do Sal: Rua soldado constitucionalista, Bairro fazenda velha – Nova Odessa.
+                            </p>
                             <iframe
                                 className="rounded"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8382380006587!2d-47.352824385377204!3d-22.80845708506187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c899d1d9c5dcd7%3A0x4401534e300daa6d!2sChacara%20Recanto%20Solar!5e0!3m2!1spt-BR!2sbr!4v1610421797745!5m2!1spt-BR!2sbr"
@@ -71,8 +74,8 @@ export default function Home() {
 
             </main>
             
-            <footer className="p-2 text-center">
-                <p>E&S © 2021</p>
+            <footer className="text-light text-center bg-dark">
+                <p className="p-2">Meu Casamento Eternizado © 2021</p>
             </footer>
         </div>
     );

@@ -13,7 +13,7 @@ export default function Index() {
     <div>
         <Head>
             <link rel="shortcut icon" href="/assets/img/heart-icon.ico" />
-            <title>Meu Casamento</title>
+            <title>Meu Casamento Eternizado</title>
         </Head>
     </div>
     );

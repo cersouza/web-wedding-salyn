@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/cersouza/web-wedding-saty.git",
-  "author": "Caio <caio.e.souza@kroton.com.br>",
+  "author": "Caio Eduardo <souza.caioeduardo@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
