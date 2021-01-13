@@ -14,7 +14,7 @@ class MyDocument extends Document {
                 integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
-            <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Great+Vibes&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Great+Vibes&display=swap" rel="stylesheet" />            
         </Head>
         <body>
           <Main />
