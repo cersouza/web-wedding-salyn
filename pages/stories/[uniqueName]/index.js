@@ -4,9 +4,10 @@ import Head from 'next/head';
 
 export default function Index() {
     const router = useRouter();
+    const { uniqueName } = router.query;
     
     useEffect(() => {
-        router.replace('/stories/evelyn-e-samuel/convidado');
+        router.replace(`${uniqueName}/convidado`);
     })
 
     return (
