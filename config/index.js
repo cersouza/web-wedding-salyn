@@ -22,7 +22,7 @@ const Config = [{
         class: 'line-white',
         filter: ['padrinhos']
     },{
-        label: 'Informações da Cerimônia',
+        label: 'Informações Cerimônia',
         redirectTo: '#informacoes-cerimonia',
         targetRedirect: '',
         class: 'line-white',

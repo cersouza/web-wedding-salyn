@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6, p, button {
     font-family: 'Bodoni Moda', serif;
 }
 
+p, button, input {
+    font-size: 16px;
+}
+
 .spinner {
     border: 8px solid rgba(0, 0, 0, 0.1);
     border-left-color: #22a6b3;
