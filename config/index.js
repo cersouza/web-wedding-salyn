@@ -22,6 +22,11 @@ const Config = [{
         class: 'line-white',
         filter: ['padrinhos']
     },{
+        label: 'Lista de Presentes',
+        redirectTo: 'http://finalfeliz.de/evelynsamuel10',
+        targetRedirect: '_blank',
+        class: 'line-white'
+    },{
         label: 'Informações Cerimônia',
         redirectTo: '#informacoes-cerimonia',
         targetRedirect: '',

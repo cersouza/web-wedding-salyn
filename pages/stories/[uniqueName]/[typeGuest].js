@@ -11,8 +11,7 @@ export default function Home() {
     if (!uniqueName || !typeGuest) 
         return null;
 
-    const isPadrinho = typeGuest && typeGuest == 'padrinhos'; 
-    const urlConfirmarPresenca = process.env.URL_CONFIRMAR_PRESENCA || '';
+    const isPadrinho = typeGuest && typeGuest == 'padrinhos';
     const data = Event(uniqueName).get();    
 
     if(!data) {
@@ -37,8 +36,8 @@ export default function Home() {
     const renderButtons = (button, i) => {
         if(button.redirectTo && (!button.filter || button.filter.includes(typeGuest)))
          return (
-                <a href={button.redirectTo} key={`button-${i}`}>
-                    <button className={`btn-${button.class}`} target={ button.targetRedirect || '_self' }>
+                <a href={button.redirectTo} key={`button-${i}`} target={ button.targetRedirect || '_self' }>
+                    <button className={`btn-${button.class}`}>
                         {button.label}
                     </button>
                 </a>
@@ -48,7 +47,7 @@ export default function Home() {
     const renderColorsPallete = (colors) => {
         return (
         <div className="pt-3 pb-3 d-flex align-items-center justify-content-center">
-            { colors.map( (color, i) => <div ng-className key={`color-${i}`} style={{ height: '100px', width: '120px', backgroundColor: color, borderRadius:'5px', margin: '0 7px' }}></div>) }
+            { colors.map( (color, i) => <div key={`color-${i}`} style={{ height: '100px', width: '120px', backgroundColor: color, borderRadius:'5px', margin: '0 7px' }}></div>) }
         </div>);
     };
     
