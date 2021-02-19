@@ -58,14 +58,16 @@ export default function Home() {
                 <link rel="shortcut icon" href="/assets/img/heart-icon.ico" />
                 <title>{`${data.spousesName[0]} & ${data.spousesName[1]} - Meu Casamento`}</title>
             </Head>
-            <div className="bg-tranparent-dark" id="inicio">
-                <div className="row">
-                    <div className="col-md-12 position-absolute top-50 start-50 translate-middle">
-                        <div className="container">
-                            <p className="text-center text-light">{ formatDate(data.event.dateTime) }</p>
-                            <h1 className="title text-center text-light">{`${data.spousesName[0]} e ${data.spousesName[1]}`}</h1>
-                            <div className="container d-md-flex justify-content-center text-center">                             
-                               { data.buttons.map(renderButtons) }                               
+            <div id="inicio" style={{backgroundImage: `url(${data.urlBackgroundImage})`, backgroundColor: '#f8f9fa', height: '100vh', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+                <div className="bg-tranparent-dark">
+                    <div className="row">
+                        <div className="col-md-12 position-absolute top-50 start-50 translate-middle">
+                            <div className="container">
+                                <p className="text-center text-light">{ formatDate(data.event.dateTime) }</p>
+                                <h1 className="title text-center text-light">{`${data.spousesName[0]} e ${data.spousesName[1]}`}</h1>
+                                <div className="container d-md-flex justify-content-center text-center">                             
+                                { data.buttons.map(renderButtons) }                               
+                                </div>
                             </div>
                         </div>
                     </div>
