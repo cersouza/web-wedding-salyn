@@ -1,7 +1,7 @@
 const Config = [{
     _id: 'xxxx',
     uniqueName: 'evelyn-e-samuel',
-    urlBackgroundImage: '/assets/img/evelyn-e-samuel-img1.jpg',    
+    urlBackgroundImage: 'https://i.ibb.co/vV6RBdr/evelyn-e-samuel-img1.jpg',    
     urlConfirmacaoPresenca: '',
     spousesName: ['Evelyn', 'Samuel'],
     event: {

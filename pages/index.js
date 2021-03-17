@@ -6,7 +6,7 @@ export default function Index() {
     const router = useRouter();
     
     useEffect(() => {
-        router.replace('/stories/evelyn-e-samuel/convidado');
+        router.replace('/home');
     })
 
     return (
