@@ -2,23 +2,40 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import PageDivider from '../../../components/pageDivider';
 import Head from 'next/head';
-import Event from '../../../services/Event';
 import Error from 'next/error';
+import { Story, StoryButton } from '../../../models/Story';
+import { GetStaticProps, GetStaticPaths } from 'next';
+import axios from 'axios';
 
-export default function Home() {
-    const { typeGuest, uniqueName } = useRouter().query;
+interface QueryProps {
+    typeGuest: string
+}
 
-    if (!uniqueName || !typeGuest) 
-        return null;
+interface SotoriesResponse {
+    ok: boolean,
+    data: Story
+}
 
-    const isPadrinho = typeGuest && typeGuest == 'padrinhos';
-    const data = Event(uniqueName).get();    
+export default function Home({data}) {
+    console.log(data)
+    const { query, isFallback } = useRouter();
+    const { typeGuest } = query;
 
-    if(!data) {
-        return <Error statusCode="404" />
+    if (isFallback) {
+        return (
+        <div>
+            Carregando...
+        </div>
+        );
     }
 
-    const formatDate = (prmDate) => {
+    const isPadrinho = typeGuest && typeGuest == 'padrinhos';
+
+    if(!data) {
+        return <Error statusCode={404} />
+    }    
+
+    const formatDate = (prmDate: string): string => {
         let formattedDate = ``;
         let date = new Date(prmDate);
         let monthNames = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
@@ -33,8 +50,8 @@ export default function Home() {
         return formattedDate;
     }  
 
-    const renderButtons = (button, i) => {
-        if(button.redirectTo && (!button.filter || button.filter.includes(typeGuest)))
+    const renderButtons = (button: StoryButton, i: number): React.ReactNode => {
+        if(button.redirectTo && (!button.filter || button.filter.includes(typeGuest as string)))
          return (
                 <a href={button.redirectTo} key={`button-${i}`} target={ button.targetRedirect || '_self' }>
                     <button className={`btn-${button.class}`}>
@@ -44,11 +61,12 @@ export default function Home() {
             )  
     }
 
-    const renderColorsPallete = (colors) => {
+    const renderColorsPallete = (colors: string[]): React.ReactNode => {
         return (
-        <div className="pt-3 pb-3 d-flex align-items-center justify-content-center">
-            { colors.map( (color, i) => <div key={`color-${i}`} style={{ height: '100px', width: '120px', backgroundColor: color, borderRadius:'5px', margin: '0 7px' }}></div>) }
-        </div>);
+            <div className="pt-3 pb-3 d-flex align-items-center justify-content-center">
+                { colors.map( (color, i) => <div key={`color-${i}`} style={{ height: '100px', width: '120px', backgroundColor: color, borderRadius:'5px', margin: '0 7px' }}></div>) }
+            </div>
+        );
     };
     
 
@@ -179,4 +197,30 @@ export default function Home() {
             </footer>
         </div>
     );
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const res = await axios.get(`http://localhost:3000/api/stories`);
+    const eventsUniqueNames = res.data.data.map( uniqueName => ({
+        params: { 
+            uniqueName, 
+            typeGuest: 'convidado' 
+        }
+    }));
+
+    return {
+        paths: eventsUniqueNames,
+        fallback: true
+    }
+} 
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { uniqueName } = context.params;
+
+    const { data: res } = await axios.get(`http://localhost:3000/api/stories/${uniqueName}`);
+
+    return {
+        props: { data: res.data },
+        revalidate: 60
+    }
 }
