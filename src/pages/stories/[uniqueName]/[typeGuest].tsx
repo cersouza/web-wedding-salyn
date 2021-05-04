@@ -3,15 +3,16 @@ import { useRouter } from 'next/router';
 import PageDivider from '../../../components/pageDivider';
 import Head from 'next/head';
 import Error from 'next/error';
-import { Story, StoryButton } from '../../../models/Story';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import axios from 'axios';
+import Story from '../../../domain/Story';
+import Button from '../../../domain/Button';
 
 interface QueryProps {
     typeGuest: string
 }
 
-interface SotoriesResponse {
+interface StoryResponse {
     ok: boolean,
     data: Story
 }
@@ -50,7 +51,7 @@ export default function Home({data}) {
         return formattedDate;
     }  
 
-    const renderButtons = (button: StoryButton, i: number): React.ReactNode => {
+    const renderButtons = (button: Button, i: number): React.ReactNode => {
         if(button.redirectTo && (!button.filter || button.filter.includes(typeGuest as string)))
          return (
                 <a href={button.redirectTo} key={`button-${i}`} target={ button.targetRedirect || '_self' }>
