@@ -3,12 +3,11 @@ import Error from 'next/error';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import GetStoryDetail from '../../../app/use-cases/GetStoryDetailUseCase';
+import GetTopStories from '../../../app/use-cases/GetTopStoriesUseCase';
 import PageDivider from '../../../components/pageDivider';
 import Button from '../../../domain/Button';
 import Story from '../../../domain/Story';
-import api from '../../../app/services/api';
-import GetStoryDetail from '../../../app/use-cases/GetStoryDetailUseCase';
-import GetTopStories from '../../../app/use-cases/GetTopStoriesUseCase';
 
 interface QueryProps {
     typeGuest: string
