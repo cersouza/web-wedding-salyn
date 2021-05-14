@@ -1,24 +1,44 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Error from 'next/error';
+import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import PageDivider from '../../../components/pageDivider';
-import Head from 'next/head';
-import Event from '../../../services/Event';
-import Error from 'next/error';
+import Button from '../../../domain/Button';
+import Story from '../../../domain/Story';
+import api from '../../../app/services/api';
+import GetStoryDetail from '../../../app/use-cases/GetStoryDetailUseCase';
+import GetTopStories from '../../../app/use-cases/GetTopStoriesUseCase';
 
-export default function Home() {
-    const { typeGuest, uniqueName } = useRouter().query;
+interface QueryProps {
+    typeGuest: string
+}
 
-    if (!uniqueName || !typeGuest) 
-        return null;
+interface StoryResponse {
+    ok: boolean,
+    data: Story
+}
 
-    const isPadrinho = typeGuest && typeGuest == 'padrinhos';
-    const data = Event(uniqueName).get();    
+export default function Home({data}) {
+    console.log(data)
+    const { query, isFallback } = useRouter();
+    const { typeGuest } = query;
 
-    if(!data) {
-        return <Error statusCode="404" />
+    if (isFallback) {
+        return (
+        <div>
+            Carregando...
+        </div>
+        );
     }
 
-    const formatDate = (prmDate) => {
+    const isPadrinho = typeGuest && typeGuest == 'padrinhos';
+
+    if(!data) {
+        return <Error statusCode={404} />
+    }    
+
+    const formatDate = (prmDate: string): string => {
         let formattedDate = ``;
         let date = new Date(prmDate);
         let monthNames = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
@@ -33,8 +53,8 @@ export default function Home() {
         return formattedDate;
     }  
 
-    const renderButtons = (button, i) => {
-        if(button.redirectTo && (!button.filter || button.filter.includes(typeGuest)))
+    const renderButtons = (button: Button, i: number): React.ReactNode => {
+        if(button.redirectTo && (!button.filter || button.filter.includes(typeGuest as string)))
          return (
                 <a href={button.redirectTo} key={`button-${i}`} target={ button.targetRedirect || '_self' }>
                     <button className={`btn-${button.class}`}>
@@ -44,11 +64,12 @@ export default function Home() {
             )  
     }
 
-    const renderColorsPallete = (colors) => {
+    const renderColorsPallete = (colors: string[]): React.ReactNode => {
         return (
-        <div className="pt-3 pb-3 d-flex align-items-center justify-content-center">
-            { colors.map( (color, i) => <div key={`color-${i}`} style={{ height: '100px', width: '120px', backgroundColor: color, borderRadius:'5px', margin: '0 7px' }}></div>) }
-        </div>);
+            <div className="pt-3 pb-3 d-flex align-items-center justify-content-center">
+                { colors.map( (color, i) => <div key={`color-${i}`} style={{ height: '100px', width: '120px', backgroundColor: color, borderRadius:'5px', margin: '0 7px' }}></div>) }
+            </div>
+        );
     };
     
 
@@ -58,14 +79,16 @@ export default function Home() {
                 <link rel="shortcut icon" href="/assets/img/heart-icon.ico" />
                 <title>{`${data.spousesName[0]} & ${data.spousesName[1]} - Meu Casamento`}</title>
             </Head>
-            <div className="bg-tranparent-dark" id="inicio">
-                <div className="row">
-                    <div className="col-md-12 position-absolute top-50 start-50 translate-middle">
-                        <div className="container">
-                            <p className="text-center text-light">{ formatDate(data.event.dateTime) }</p>
-                            <h1 className="title text-center text-light">{`${data.spousesName[0]} e ${data.spousesName[1]}`}</h1>
-                            <div className="container d-md-flex justify-content-center text-center">                             
-                               { data.buttons.map(renderButtons) }                               
+            <div id="inicio" style={{backgroundImage: `url(${data.urlBackgroundImage})`, backgroundColor: '#f8f9fa', height: '100vh', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+                <div className="bg-tranparent-dark">
+                    <div className="row">
+                        <div className="col-md-12 position-absolute top-50 start-50 translate-middle">
+                            <div className="container">
+                                <p className="text-center text-light">{ formatDate(data.event.dateTime) }</p>
+                                <h1 className="title text-center text-light">{`${data.spousesName[0]} e ${data.spousesName[1]}`}</h1>
+                                <div className="container d-md-flex justify-content-center text-center">                             
+                                { data.buttons.map(renderButtons) }                               
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -177,4 +200,33 @@ export default function Home() {
             </footer>
         </div>
     );
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const getTopStories = new GetTopStories();
+    const events = await getTopStories.execute();
+
+    const eventsUniqueNames = events.map( uniqueName => ({
+        params: { 
+            uniqueName, 
+            typeGuest: 'convidado'
+        }
+    }));
+
+    return {
+        paths: eventsUniqueNames,
+        fallback: true
+    }
+} 
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { uniqueName } = context.params as { uniqueName: string };
+
+    const getStoryDetail = new GetStoryDetail();
+    const data = await getStoryDetail.execute({ uniqueName });
+
+    return {
+        props: { data },
+        revalidate: 60
+    }
 }

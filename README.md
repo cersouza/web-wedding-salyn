@@ -2,4 +2,5 @@
 
 ### Next TO DO
 
-- Use [**nodemailer**](https://www.npmjs.com/package/nodemailer)
+- XX Use [**nodemailer**](https://www.npmjs.com/package/nodemailer)
+- Use [**SendGrid**](https://sendgrid.com/docs/for-developers/sending-email/api-getting-started/)
