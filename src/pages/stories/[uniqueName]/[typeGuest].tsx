@@ -1,12 +1,12 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Error from 'next/error';
+import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import PageDivider from '../../../components/pageDivider';
-import Head from 'next/head';
-import Error from 'next/error';
-import { GetStaticProps, GetStaticPaths } from 'next';
-import axios from 'axios';
-import Story from '../../../domain/Story';
 import Button from '../../../domain/Button';
+import Story from '../../../domain/Story';
+import api from '../../../services/api';
 
 interface QueryProps {
     typeGuest: string
@@ -201,11 +201,11 @@ export default function Home({data}) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const res = await axios.get(`http://localhost:3000/api/stories`);
+    const res = await api.get(`/api/stories`);
     const eventsUniqueNames = res.data.data.map( uniqueName => ({
         params: { 
             uniqueName, 
-            typeGuest: 'convidado' 
+            typeGuest: 'convidado'
         }
     }));
 
@@ -218,7 +218,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
     const { uniqueName } = context.params;
 
-    const { data: res } = await axios.get(`http://localhost:3000/api/stories/${uniqueName}`);
+    const { data: res } = await api.get(`/api/stories/${uniqueName}`);
 
     return {
         props: { data: res.data },
