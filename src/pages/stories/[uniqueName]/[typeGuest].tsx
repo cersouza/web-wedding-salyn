@@ -6,7 +6,9 @@ import { useRouter } from 'next/router';
 import PageDivider from '../../../components/pageDivider';
 import Button from '../../../domain/Button';
 import Story from '../../../domain/Story';
-import api from '../../../services/api';
+import api from '../../../app/services/api';
+import GetStoryDetail from '../../../app/use-cases/GetStoryDetailUseCase';
+import GetTopStories from '../../../app/use-cases/GetTopStoriesUseCase';
 
 interface QueryProps {
     typeGuest: string
@@ -201,8 +203,10 @@ export default function Home({data}) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const res = await api.get(`/api/stories`);
-    const eventsUniqueNames = res.data.data.map( uniqueName => ({
+    const getTopStories = new GetTopStories();
+    const events = await getTopStories.execute();
+
+    const eventsUniqueNames = events.map( uniqueName => ({
         params: { 
             uniqueName, 
             typeGuest: 'convidado'
@@ -216,12 +220,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 } 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    const { uniqueName } = context.params;
+    const { uniqueName } = context.params as { uniqueName: string };
 
-    const { data: res } = await api.get(`/api/stories/${uniqueName}`);
+    const getStoryDetail = new GetStoryDetail();
+    const data = await getStoryDetail.execute({ uniqueName });
 
     return {
-        props: { data: res.data },
+        props: { data },
         revalidate: 60
     }
 }

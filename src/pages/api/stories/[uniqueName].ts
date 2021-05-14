@@ -1,8 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import GetStoryDetail from "../../../app/use-cases/GetStoryDetailUseCase";
 import Events from '../../../config/data.json';
 
-export default function(req: NextApiRequest, res: NextApiResponse) {
-  const event = Events.find(event => event.uniqueName == req.query.uniqueName);
+const getStoryDetail = new GetStoryDetail();
+
+export default async function(req: NextApiRequest, res: NextApiResponse) {
+  const { uniqueName } = req.query as { uniqueName: string };
+
+  const event = await getStoryDetail.execute({ uniqueName });
   
   const data = {
     ok: true,

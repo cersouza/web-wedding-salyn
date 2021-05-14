@@ -1,8 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import Events from '../../../config/data.json';
+import GetTopStories from "../../../app/use-cases/GetTopStoriesUseCase";
 
-export default function(req: NextApiRequest, res: NextApiResponse) {
-  const eventsUniqueNames = Events.map(event => event.uniqueName);
+const getTopStories = new GetTopStories();
+
+export default async function(req: NextApiRequest, res: NextApiResponse) {
+  const eventsUniqueNames = await getTopStories.execute();
   
   const data = {
     ok: true,
