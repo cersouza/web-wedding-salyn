@@ -3,12 +3,12 @@ import Error from 'next/error';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import GetStoryDetail from '../../../app/use-cases/GetStoryDetailUseCase';
+import GetTopStories from '../../../app/use-cases/GetTopStoriesUseCase';
 import PageDivider from '../../../components/pageDivider';
 import Button from '../../../domain/Button';
 import Story from '../../../domain/Story';
-import api from '../../../app/services/api';
-import GetStoryDetail from '../../../app/use-cases/GetStoryDetailUseCase';
-import GetTopStories from '../../../app/use-cases/GetTopStoriesUseCase';
+import { sortListByName } from '../../../shared/utils/functions';
 
 interface QueryProps {
     typeGuest: string
@@ -19,8 +19,7 @@ interface StoryResponse {
     data: Story
 }
 
-export default function Home({data}) {
-    console.log(data)
+export default function Home({ data }: {  data: Story }) {
     const { query, isFallback } = useRouter();
     const { typeGuest } = query;
 
@@ -33,6 +32,7 @@ export default function Home({data}) {
     }
 
     const isPadrinho = typeGuest && typeGuest == 'padrinhos';
+
 
     if(!data) {
         return <Error statusCode={404} />
@@ -72,6 +72,10 @@ export default function Home({data}) {
         );
     };
     
+    const handleGiftListClick = (giftName: string) => {
+        const message = encodeURI(`Olá, tudo bem ? Gostaria de dar um(a) ${giftName} para vocês !`);
+        window.open(`https://wa.me/${data.telephoneNumber}?text=${message}`);
+    };
 
     return (        
         <div>
@@ -191,7 +195,29 @@ export default function Home({data}) {
                         </div>
                         <PageDivider />
                     </div>
-                </div> 
+                </div>
+
+                <div id="lista-de-presentes">
+                    <div className="row m-0 pt-4">
+                        <div className="col-md-12 text-center">
+                            <h1>Lista de Presentes</h1>
+                            <p>Entre em contato com os noivos <strong>clicando no presente</strong> que você gostaria de doar:</p>
+                            <ul className="list">
+                                { 
+                                    data.giftsList
+                                    .filter(({ given }) => !given )
+                                    .sort(sortListByName)
+                                    .map(({ name }) => (
+                                        <li>
+                                            <a href="javascript:void(0)" onClick={() => handleGiftListClick(name)} >{name}</a>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        <PageDivider />
+                    </div>
+                </div>
 
             </main>
             

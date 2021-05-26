@@ -1,22 +1,161 @@
 [
     {
-        "_id": "xxxx",
+        "_id": {
+            "$oid": "60a304ac9e61dd26ae80b860"
+        },
         "uniqueName": "evelyn-e-samuel",
-        "urlBackgroundImage": "https://i.ibb.co/vV6RBdr/evelyn-e-samuel-img1.jpg",
+        "password": "@eve&samue1",
+        "urlBackgroundImage": "https://i.ibb.co/vdv988v/evelyn-e-samuel-2b.jpg",
         "urlConfirmacaoPresenca": "",
+        "telephoneNumber": "+5519989083078",
         "spousesName": [
             "Evelyn",
             "Samuel"
         ],
         "event": {
-            "dateTime": "2021-07-10T16:00:00",
+            "dateTime": "2021-07-10T15:00:00",
             "address": "Acampamento Recanto do Sal: Rua soldado constitucionalista, Bairro fazenda velha – Nova Odessa.",
             "iframeAddressUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8382380006587!2d-47.352824385377204!3d-22.80845708506187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c899d1d9c5dcd7%3A0x4401534e300daa6d!2sChacara%20Recanto%20Solar!5e0!3m2!1spt-BR!2sbr!4v1610421797745!5m2!1spt-BR!2sbr"
         },
+        "giftsList": [
+            {
+                "_id": "1",
+                "name": "Aspirador de pó",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "2",
+                "name": "Prateleira para banheiro porta shampoo",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "3",
+                "name": "Varal Retrátil Automático com 5 Cordas",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "4",
+                "name": "Banco Escada de 2 Degraus",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "5",
+                "name": "Mesa de cabeceira",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "6",
+                "name": "Frigobar",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "7",
+                "name": "Churrasqueira elétrica",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "8",
+                "name": "Cortina Blackout 2.55m de largura",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "9",
+                "name": "Grill",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "10",
+                "name": "Lavadora de roupa",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "11",
+                "name": "Guarda roupa casal",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "12",
+                "name": "Sofá 4 lugares",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "13",
+                "name": "Ferro de passar roupa",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "14",
+                "name": "Coifa de parede",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "15",
+                "name": "Ar condicionado",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "16",
+                "name": "Jogo de toalha",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "17",
+                "name": "Liquidificador",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "18",
+                "name": "Fritadeira elétrica",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            },
+            {
+                "_id": "19",
+                "name": "Jogo de faqueiro",
+                "description": "",
+                "price": "",
+                "imageUrl": ""
+            }
+        ],
         "buttons": [
             {
                 "label": "Confirmar Presença",
-                "redirectTo": "",
+                "redirectTo": "https://reginamartinscerimonial.com.br/evelyn-samuel.php#confirmacao",
                 "targetRedirect": "_blank",
                 "class": "line-white",
                 "filter": "convidado"
@@ -32,8 +171,8 @@
             },
             {
                 "label": "Lista de Presentes",
-                "redirectTo": "http://finalfeliz.de/evelynsamuel10",
-                "targetRedirect": "_blank",
+                "redirectTo": "#lista-de-presentes",
+                "targetRedirect": "",
                 "class": "line-white"
             },
             {
