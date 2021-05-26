@@ -201,7 +201,7 @@ export default function Home({ data }: {  data: Story }) {
                     <div className="row m-0 pt-4">
                         <div className="col-md-12 text-center">
                             <h1>Lista de Presentes</h1>
-                            <p>Entre em contato com os noivos <strong>clicando no presente</strong> que você gostaria de doar:</p>
+                            <p>Entre em contato com os noivos <strong>clicando no presente</strong> que você gostaria de dar:</p>
                             <ul className="list">
                                 { 
                                     data.giftsList
