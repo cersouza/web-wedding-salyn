@@ -114,4 +114,8 @@ p, button, input {
         margin: 0;
         margin-top: 1rem;
     }
+    
+    .list li {
+        width: 22rem;
+    }
 }
