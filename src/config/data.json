@@ -3,6 +3,7 @@
         "_id": {
             "$oid": "60a304ac9e61dd26ae80b860"
         },
+        "template": "salyn",
         "uniqueName": "evelyn-e-samuel",
         "password": "@eve&samue1",
         "urlBackgroundImage": "https://i.ibb.co/vdv988v/evelyn-e-samuel-2b.jpg",
@@ -169,6 +170,205 @@
                     "padrinhos"
                 ]
             },
+            {
+                "label": "Lista de Presentes",
+                "redirectTo": "#lista-de-presentes",
+                "targetRedirect": "",
+                "class": "line-white"
+            },
+            {
+                "label": "Informações Cerimônia",
+                "redirectTo": "#informacoes-cerimonia",
+                "targetRedirect": "",
+                "class": "line-white",
+                "filter": ""
+            }
+        ],
+        "pages": [
+            {
+                "id": "padrinhos",
+                "title": "Padrinhos",
+                "template": "<h1>Padrinhos</h1>"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "60dde5ddaf2f284dff51efa4"
+        },
+        "template": "emaio",
+        "uniqueName": "emily-e-caio",
+        "password": "@emily&caio",
+        "urlBackgroundImage": "https://i.ibb.co/KzsDGt3/eu-e-ela-2.jpg",
+        "urlAvatarImage": "https://i.ibb.co/BK8Ljrn/emily-e-caio.jpg",
+        "urlConfirmacaoPresenca": "",
+        "telephoneNumber": "+55995813691",
+        "spousesName": [
+            "Emily",
+            "Caio"
+        ],
+        "event": {
+            "dateTime": "2021-11-27T15:00:00",
+            "address": "Jardim Botânico Plantarum: Avenida Brasil, 2000, Nova Odessa-SP.",
+            "iframeAddressUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6186.68243643725!2d-47.31572138612898!3d-22.779353821534748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c899b536a9cbc3%3A0x1e8a5f59b9d89213!2sJardim%20Bot%C3%A2nico%20Plantarum!5e0!3m2!1spt-BR!2sbr!4v1624699382878!5m2!1spt-BR!2sbr",
+            "logo": "https://i.ibb.co/MB3x8vS/bras-o-branco-transp.png",
+            "message": "\"O amor não é um lugar para ir e vir quando quisermos. É uma casa que entramos e nos comprometemos a nunca partir. Então feche a porta atrás de você e jogue a chave fora.\""
+        },
+        "giftsList": [
+            {
+                "_id": "1",
+                "name": "Geladeira",
+                "description": "",
+                "price": "R$ 2.000,00",
+                "imageUrl": "https://i.ibb.co/r6n5SDV/geladeira.png",
+                "giveGiftUrl": "https://mpago.la/1Jk6jVu"
+            },
+            {
+                "_id": "2",
+                "name": "Fogão",
+                "description": "",
+                "price": "R$ 750,00",
+                "imageUrl": "https://i.ibb.co/pjMNt9n/fogao.png",
+                "giveGiftUrl": "https://mpago.la/2t5uPoR"
+            },
+            {
+                "_id": "3",
+                "name": "Mesa de jantar",
+                "description": "",
+                "price": "R$ 640,00",
+                "imageUrl": "https://i.ibb.co/rMwncR2/mesa.webp",
+                "giveGiftUrl": "https://mpago.la/2FEUaji"
+            },
+            {
+                "_id": "4",
+                "name": "Armário de Cozinha",
+                "description": "",
+                "price": "R$ 660,00",
+                "imageUrl": "https://i.ibb.co/y5CY0Pt/armario.png",
+                "giveGiftUrl": "https://mpago.la/2PTtHUL"
+            },
+            {
+                "_id": "5",
+                "name": "Sofá",
+                "description": "",
+                "price": "R$ 700,00",
+                "imageUrl": "https://i.ibb.co/B4m0thQ/sofa.png",
+                "giveGiftUrl": "https://mpago.la/1KkKGBk"
+            },
+            {
+                "_id": "6",
+                "name": "Televisão",
+                "description": "",
+                "price": "R$ 1.020,00",
+                "imageUrl": "https://i.ibb.co/RcJBGwK/tv.png",
+                "giveGiftUrl": "https://mpago.la/1yXMJqo"
+            },
+            {
+                "_id": "7",
+                "name": "Painel para TV",
+                "description": "",
+                "price": "R$ 210,00",
+                "imageUrl": "https://i.ibb.co/QXpspcS/painel-tv.webp",
+                "giveGiftUrl": "https://mpago.la/147KYyT"
+            },
+            {
+                "_id": "8",
+                "name": "Ferro de passar",
+                "description": "",
+                "price": "R$ 180,00",
+                "imageUrl": "https://i.ibb.co/nb83NXJ/ferro-passar.png",
+                "giveGiftUrl": "https://mpago.la/2aGWmYS"
+            },
+            {
+                "_id": "9",
+                "name": "Ventilador",
+                "description": "",
+                "price": "R$ 200,00",
+                "imageUrl": "https://i.ibb.co/xz4jmFd/ventilador.png",
+                "giveGiftUrl": "https://mpago.la/1fVZGWR"
+            },
+            {
+                "_id": "10",
+                "name": "Liquidificador",
+                "description": "",
+                "price": "R$ 150,00",
+                "imageUrl": "https://i.ibb.co/VC2Qm1C/liquidificador.png",
+                "giveGiftUrl": "https://mpago.la/2AydB6y"
+            },
+            {
+                "_id": "11",
+                "name": "Jogo de panelas",
+                "description": "",
+                "price": "R$ 300,00",
+                "imageUrl": "https://i.ibb.co/ZHnC7WS/jogo-panelas.png",
+                "giveGiftUrl": "https://mpago.la/2AeBYeY"
+            },
+            {
+                "_id": "12",
+                "name": "Panela de Pressão",
+                "description": "",
+                "price": "R$ 110,00",
+                "imageUrl": "https://i.ibb.co/sqgQCqL/panela-pressao.png",
+                "giveGiftUrl": "https://mpago.la/1gxD4Yr"
+            },
+            {
+                "_id": "13",
+                "name": "Máquina de lavar roupas",
+                "description": "",
+                "price": "R$ 1.550,00",
+                "imageUrl": "https://i.ibb.co/hRsPnYN/maquina-lavar.png",
+                "giveGiftUrl": "https://mpago.la/1CXHHrs"
+            },
+            {
+                "_id": "14",
+                "name": "Guarda-roupas",
+                "description": "",
+                "price": "R$ 1.080,00",
+                "imageUrl": "https://i.ibb.co/QfLPr9W/guarda-roupas.webp",
+                "giveGiftUrl": "https://mpago.la/2e1boBQ"
+            },
+            {
+                "_id": "15",
+                "name": "Cama de casal",
+                "description": "",
+                "price": "R$ 1.200,00",
+                "imageUrl": "https://i.ibb.co/MhjXn11/cama-casal.png",
+                "giveGiftUrl": "https://mpago.la/2C4Qzxp"
+            },
+            {
+                "_id": "16",
+                "name": "Jogo de Jantar",
+                "description": "",
+                "price": "R$ 320,00",
+                "imageUrl": "https://i.ibb.co/Rjps5ds/jogo-jantar.png",
+                "giveGiftUrl": "https://mpago.la/1KQHy6r"
+            },
+            {
+                "_id": "17",
+                "name": "Tábua de passar",
+                "description": "",
+                "price": "R$ 105,00",
+                "imageUrl": "https://i.ibb.co/SdmPc8s/tabua-passar.webp",
+                "giveGiftUrl": "https://mpago.la/1EneTJE"
+            },
+            {
+                "_id": "18",
+                "name": "Jogo de cama",
+                "description": "",
+                "price": "R$ 320,00",
+                "imageUrl": "https://i.ibb.co/P5J8xn8/jogo-cama.webp",
+                "giveGiftUrl": "https://mpago.la/2QSRG4Q"
+            },
+            {
+                "_id": "19",
+                "name": "Microondas",
+                "description": "",
+                "price": "R$ 640,00",
+                "imageUrl": "https://i.ibb.co/k4q1jkQ/microondas.png",
+                "giveGiftUrl": "https://mpago.la/288afoB"
+            }
+        ],
+        "buttons": [
             {
                 "label": "Lista de Presentes",
                 "redirectTo": "#lista-de-presentes",
