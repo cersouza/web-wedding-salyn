@@ -16,7 +16,7 @@ interface StoryResponse {
 
 export default function Home({ data }: {  data: Story }) {
     const getDefaultTemplate = () => {
-      switch (data.template) {
+      switch (data?.template) {
         case 'emaio':
           return <EmaioHomeTemplate story={data} />;
         default:

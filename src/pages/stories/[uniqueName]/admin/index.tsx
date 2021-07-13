@@ -10,7 +10,7 @@ interface HomeProps {
 
 export default function Home({ data }: HomeProps) {
   const getDefaultTemplate = () => {
-    switch (data.template) {
+    switch (data?.template) {
       case 'emaio':
         return <EmaioHomeTemplate story={data} />;
       default:
