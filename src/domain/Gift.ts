@@ -5,4 +5,5 @@ export default interface Gift {
   price: number,
   imageUrl: string,
   given?: boolean,
+  giveGiftUrl?: string,
 }
