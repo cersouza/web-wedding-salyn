@@ -29,14 +29,14 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
   return (
     <Grid
       container
-      justify="center"
+      justifyContent="center"
       alignItems="center"
       className={styles.root}
     >
       <Grid
         item
         container
-        justify="center"
+        justifyContent="center"
         alignItems="center"
         direction="column"
         className={styles.backgroundTransparentDark}
@@ -50,7 +50,7 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
           <Image
             src={story.event.logo}
             width={500}
-            height="auto"
+            height={161}
             title={`${Story.getSpousesName(story)} logo`}
           />
         </Grid>
@@ -59,7 +59,7 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
             <Grid
               item
               container
-              justify="center"
+              justifyContent="center"
             >
               {
                 story.buttons.map((button) => (
@@ -92,7 +92,7 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
         story.event.message && (
           <Grid
             container
-            justify="center"
+            justifyContent="center"
             className={styles.section}
           >
             <Grid item xs={12}>
@@ -119,7 +119,7 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
         item
         xs={12}
         container
-        justify="center"
+        justifyContent="center"
         spacing={3}
         className={styles.section}
       >
@@ -146,7 +146,7 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
                   <Grid
                     container
                     spacing={1}
-                    justify="center"
+                    justifyContent="center"
                     direction="column"
                     alignItems="center"
                   >
@@ -182,7 +182,7 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
                   </Grid>
                 </CardContent>
                 <CardActions>
-                  <Grid container justify="center">
+                  <Grid container justifyContent="center">
                     <Grid item xs={12}>
                       <Button
                         fullWidth

@@ -1,11 +1,11 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@material-ui/core';
 
 export const TITLE_FONT_FAMILY = '\'Bodoni Moda\', serif';
 export const DEFAULT_FONT_FAMILY = '\'Roboto\', \'Helvetica\', \'Arial\', sans-serif';
 export const LIGTH_GRAY_COLOR = '#A1A1A1';
 export const MEDDIUM_GRAY_COLOR = '#F8F9FA';
 
-export const Theme = createMuiTheme({
+export const Theme = createTheme({
   typography: {
     fontFamily: DEFAULT_FONT_FAMILY,
     h2: {
