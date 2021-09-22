@@ -1,6 +1,26 @@
-# web-wedding-saty
+# Wedding Site
 
-### Next TO DO
+<img src=".readme/salyn-demo.png" />
 
-- XX Use [**nodemailer**](https://www.npmjs.com/package/nodemailer)
-- Use [**SendGrid**](https://sendgrid.com/docs/for-developers/sending-email/api-getting-started/)
+***
+
+## 1. About 📙
+**🌐 View demo: https://meucasamentoeternizado.com.br/stories/evelyn-e-samuel/**
+
+This is a wedding site made for friends with:
+- **Clean Architecture**;
+- NextJS / ReactJS;
+- Typescript;
+- MongoDB;
+
+## 2. Setup 💻
+
+```bash
+npm i
+```
+
+## 3. Run in development mode ▶️
+
+```bash
+npm run dev
+```
