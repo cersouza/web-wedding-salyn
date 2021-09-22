@@ -50,7 +50,7 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
           <Image
             src={story.event.logo}
             width={500}
-            height={40}
+            height={161}
             title={`${Story.getSpousesName(story)} logo`}
           />
         </Grid>
