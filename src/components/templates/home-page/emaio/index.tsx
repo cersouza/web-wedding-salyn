@@ -132,6 +132,9 @@ export default function EmaioHomeTemplate({ story }: HomeProps) {
           <Typography variant="h2">
             Lista de Presentes
           </Typography>
+          <Typography>
+            Devido aos nossos planos de mudança só poderemos receber os presentes em dinheiro. Caso deseje doar outros valores, entre em contato conosco:
+          </Typography>
         </Grid>
         {
           story.giftsList.filter((gift) => !gift.given).slice(0, giftsToShowLimit).map((gift: Gift) => (
